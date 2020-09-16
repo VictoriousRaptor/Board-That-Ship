@@ -1,0 +1,32 @@
+﻿l_french:
+ # events
+ board_that_ship.3.name:0 "Ship heavily damaged"
+ board_that_ship.3.desc:0 "§M[board_that_ship_target.GetName]§! has powered down all subsystems. Scans indicate severe internal damage and it is now drifting - It's not clear how the ship is still in once piece.\nBioscans reveal that the surviving crew of the hostile ship is engaged in damage-control. If we are quick, we may be able to board and capture the ship for our own, but not without a fight!"
+ board_that_ship.3.0:0 "Board that ship!"
+ board_that_ship.3.1:0 "We don't need this junk, finish them off."
+
+ board_that_ship.4.name:0 "Success"
+ board_that_ship.4.desc:0 "Despite traps and fierce fighting, resistance in the hostile crew has ceased, and they have now given their unconditional surrender to our marines.\nEngineers have arrived to fix critical damage to keep the ship online but it will require a full overhaul."
+
+ board_that_ship.5.name:0 "Failure"
+ board_that_ship.5.desc:0 "We did not have time to land on §M[board_that_ship_target.GetName]§!. The cause of the explosion is unknown, maybe someone activated the self destruct system.\nWhatever it was, we missed our chance."
+
+ board_that_ship.6.desc:0 "Enemy did not have time to land on §M[board_that_ship_target.GetName]§!. Our fleet retreated and somehow managed to save the damaged ship."
+
+ board_that_ship.7.desc:0 "We did not have time to land on §M[board_that_ship_target.GetName]§!. The enemy fleet retreated and somehow managed to save the damaged ship.\nWhatever, we missed our chance."
+
+ # project
+ board_that_ship_project:0 "Board that ship!"
+ board_that_ship_project_DESC:0 "The ship is completely defenseless, we must seize it."
+ board_that_ship_project_discovery:0 "$board_that_ship_project$"
+ board_that_ship_project_discovery_DESC:0 "$board_that_ship_project_DESC$"
+
+ # modifier
+ board_that_ship_titan_cost:0 "Can't build titan"
+ board_that_ship_titan_cost_desc:0 "$board_that_ship_titan_cost$"
+ 
+ # menu
+ modmenu_board_that_ship:0 "§HBoard That Ship§!"
+ board_that_ship_menu.1.desc:0 "$modmenu_configure$ $modmenu_board_that_ship$"
+ board_that_ship_menu.1.0:0 "Debug."
+ board_that_ship_menu.1.0.tooltip:0 "Press if something going wrong."

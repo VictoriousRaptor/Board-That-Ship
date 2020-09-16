@@ -1,0 +1,31 @@
+l_chinese: 
+ board_that_ship.3.name:0 "敌方舰船严重受损"
+ board_that_ship.3.desc:0 "我们重创了§M[board_that_ship_target.GetName]§！我方扫描显示它的所有子系统都已经失效，内部严重受损，失去动力在太空中慢慢漂浮着。\n它还没有四分五裂，简直是个奇迹了。生物探测仪则显示敌方船员正在进行损管作业，如果我们下手够快，或许能够俘获这艘船，但是可以想见会有一场浴血奋战！"
+ boardyi_that_ship.3.0:0 "准备跳帮！"
+ board_that_ship_project:0 "我们不需要这堆太空垃圾，炸了它吧。"
+
+ board_that_ship.4.name:0 "成功"
+ board_that_ship.4.desc:0 "尽管给我们布下了天罗地网，§M[board_that_ship_target.GetName]§的船员的抵抗最后还是被粉碎了。他们向我们英勇的陆战队员无条件投降了。\n工程师们已经登舰，修理它好让它为我们服务，但是它可能需要来一次大修。"
+
+ board_that_ship.5.name:0 "失败"
+ board_that_ship.5.desc:0 "我们没来得及登入§M[board_that_ship_target.GetName]§它就爆炸了！爆炸的原因尚不清楚，可能是敌舰上的某人启动了自爆系统。\n不管怎么样，我们都错过了绝佳的机会。"
+
+ board_that_ship.6.desc:0 "敌人没来得及登入§M[board_that_ship_target.GetName]§！我们英勇的船员及时撤退了，而且保住了受损的船。"
+
+ board_that_ship.7.desc:0 "我们没来得及登入§M[board_that_ship_target.GetName]§！敌人成功撤退了，而且带走了受损的船。我们错过了绝佳的机会。"
+
+ board_that_ship_project:0 "准备跳帮！"
+ board_that_ship_project_DESC:0 "这艘船现在任人鱼肉，我们一定要俘获它。"
+
+ # modifier
+ board_that_ship_titan_cost:0 "无法建造泰坦"
+ board_that_ship_titan_cost_desc:0 "$board_that_ship_titan_cost$"
+
+ board_that_ship_project_discovery:0 "$board_that_ship_project$"
+ board_that_ship_project_discovery_DESC:0 "$board_that_ship_project_DESC$"
+
+ # menu
+ modmenu_board_that_ship:0 "§HBoard That Ship§!"
+ board_that_ship_menu.1.desc:0 "$modmenu_configure$ $modmenu_board_that_ship$"
+ board_that_ship_menu.1.0:0 "Debug."
+ board_that_ship_menu.1.0.tooltip:0 "如果出了什么问题就按一下。"

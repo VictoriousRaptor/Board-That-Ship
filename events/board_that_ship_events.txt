@@ -1,0 +1,337 @@
+namespace = board_that_ship
+# set flag
+ship_event = {
+	id = board_that_ship.0
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		nor = {
+			#has_global_flag = humman_fallen_empires_installed
+			has_ship_flag = board_that_ship_target
+		}
+		or = {
+			is_ship_size = colossus
+			is_ship_size = titan
+			is_ship_size = massive_ship_fallen_empire
+			is_ship_size = galleon
+			is_ship_size = marauder_galleon
+			is_ship_size = juggernaut
+			is_ship_class = shipclass_colonizer
+		}
+		exists = owner
+		owner = {
+			is_crisis_faction = no
+			# is_ai = yes
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+			}
+			random_list = {
+				9 = {
+				}
+				1 = {
+					set_ship_flag = board_that_ship_target
+					set_disable_at_health = 0.01
+				}
+			}
+		}
+		else = {
+			set_ship_flag = board_that_ship_target
+			set_disable_at_health = 0.01
+		}
+	}
+}
+
+# set flag when game starts
+event = {
+	id = board_that_ship.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_ship = {
+			ship_event = {
+				id = board_that_ship.0
+			}
+		}
+		set_global_flag = board_that_ship_installed
+	}
+}
+
+# set flag then mod loaded
+# event = {
+# 	id = board_that_ship.12
+# 	hide_window = yes
+# 	fire_only_once = yes
+# 	trigger = {
+# 		# NOT = {
+# 		# 	has_global_flag = board_that_ship_installed
+# 		# }
+# 		days_passed > 1
+# 	}
+# 	immediate = {
+# 		if = {
+# 			limit = {
+# 				NOT = {
+# 					has_global_flag = board_that_ship_installed
+# 				}
+# 			}
+# 			every_ship = {
+# 				ship_event = {
+# 					id = board_that_ship.0
+# 				}
+# 			}
+# 			set_global_flag = board_that_ship_installed
+# 		}
+# 	}
+# }
+
+# ship disabled
+ship_event = {
+	id = board_that_ship.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_ship_flag = board_that_ship_target
+		exists = from.owner
+		is_disabled = yes
+	}
+	immediate = {
+		# set_disabled = no
+		# set_disabled = yes
+		save_event_target_as = board_that_ship_target
+		from.owner = {
+			country_event = {
+				id = board_that_ship.3
+			}
+		}
+		# log= "Boarding start on [board_that_ship_target.GetName] owner: [board_that_ship_target.Owner.GetName]"
+	}
+}
+
+# event for disabler
+country_event = {
+	id = board_that_ship.3
+	title = board_that_ship.3.name
+	desc = board_that_ship.3.desc
+	picture = GFX_evt_board_that_ship_picture3
+	show_sound = event_space_battle
+	location = event_target:board_that_ship_target
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:board_that_ship_target
+	}
+	option = {
+		name = board_that_ship.3.0
+		enable_special_project = {
+			name = board_that_ship_project
+			location = event_target:board_that_ship_target
+			owner = root
+		}
+	}
+	option = {
+		name = board_that_ship.3.1
+		hidden_effect = {
+			event_target:board_that_ship_target = {
+				set_disabled = no
+				set_disable_at_health = 0.01
+			}
+			#destroy_ship = event_target:board_that_ship_target
+		}
+	}
+}
+
+# Boarded and Captured
+country_event = {
+	id = board_that_ship.4
+	title = board_that_ship.4.name
+	desc = board_that_ship.4.desc
+	picture = GFX_evt_board_that_ship_picture2
+	show_sound = event_ground_battle
+	location = event_target:board_that_ship_target
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:board_that_ship_target
+	}
+	immediate = {
+		event_target:board_that_ship_target = {
+			set_disabled = no
+			fleet = {
+				unassign_leader = this.leader
+				set_owner = root
+				set_name = random
+			}
+			# if = {
+			# 	limit = {
+			# 		is_ship_size = galleon
+			# 		root = {
+			# 			not = {
+			# 				has_existing_ship_design = "NAME_Pirate_Galleon"
+			# 			}
+			# 		}
+			# 	}
+			# 	create_ship_design = {
+			# 		design = "NAME_Pirate_Galleon"
+			# 		#ftl = yes
+			# 	}
+			# 	root = {
+			# 		add_ship_design = last_created_design
+			# 	}
+			# }
+			# if = {
+			# 	limit = {
+			# 		is_ship_size = massive_ship_fallen_empire
+			# 		root = {
+			# 			not = {
+			# 				has_existing_ship_design = "Boarded Titan"
+			# 			}
+			# 		}
+			# 	}
+			# 	create_ship_design = {
+			# 		design = "Boarded Titan"
+			# 		ftl = root
+			# 	}
+			# 	root = {
+			# 		add_ship_design = last_created_design
+			# 		add_modifier = {
+			# 			modifier = board_that_ship_titan_cost
+			# 			days = -1
+			# 		}
+			# 	}
+			# }
+		}
+		#log= "Boarding sucsess on [board_that_ship_target.GetName] owner: [board_that_ship_target.Owner.GetName]"
+	}
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# too late
+country_event = {
+	id = board_that_ship.5
+	title = board_that_ship.5.name
+	desc = board_that_ship.5.desc
+	picture = GFX_evt_exploding_ship
+	show_sound = event_ship_explosion
+	location = event_target:board_that_ship_target
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:board_that_ship_target
+	}
+	immediate = {
+		destroy_ship = event_target:board_that_ship_target
+		#log= "Boarding too late on [board_that_ship_target.GetName] owner: [board_that_ship_target.Owner.GetName]"
+	}
+	option = {
+		name = CURSES
+	}
+}
+
+# if ftl escaped
+fleet_event = {
+	id = board_that_ship.6
+	title = board_that_ship.4.name
+	desc = board_that_ship.6.desc
+	picture = GFX_evt_board_that_ship_picture4
+	show_sound = event_ship_thrusters
+	location = root
+	is_triggered_only = yes
+	trigger = {
+		any_owned_ship = {
+			has_ship_flag = board_that_ship_target
+			is_disabled = yes
+		}
+	}
+	immediate = {
+		random_owned_ship = {
+			limit = {
+				has_ship_flag = board_that_ship_target
+				is_disabled = yes
+			}
+			save_event_target_as = board_that_ship_target
+			set_disabled = no
+		}
+		# try remove project
+		every_country = {
+			limit = {
+				has_special_project = board_that_ship_project
+			}
+			abort_special_project = {
+				type = board_that_ship_project
+				location = event_target:board_that_ship_target
+			}
+			country_event = {
+				id = board_that_ship.7
+			}
+		}
+		#log= "Boarding escaped on [board_that_ship_target.GetName] owner: [board_that_ship_target.Owner.GetName]"
+	}
+	option = {
+		name = GOOD
+	}
+}
+
+# if ftl escaped notification
+country_event = {
+	id = board_that_ship.7
+	title = board_that_ship.5.name
+	desc = board_that_ship.7.desc
+	picture = GFX_evt_board_that_ship_picture4
+	show_sound = event_ship_thrusters
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = CURSES
+	}
+}
+
+# This = owner of fleet 1
+# From = owner of fleet 2
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = board_that_ship.8
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		not = {
+			is_country_type = swarm
+		}
+		exists = from
+		exists = fromfrom
+		from = {
+			is_ai = no
+		}
+		fromfrom = {
+			is_ship_class = shipclass_colonizer
+		}
+	}
+	immediate = {
+		#log= "try to board colony ship"
+		fromfrom = {
+			random_owned_ship = {
+				#log= "[this.GetName]"
+				set_ship_flag = board_that_ship_target
+				set_disable_at_health = 0.01
+			}
+		}
+	}
+}
+
+# debug event
+country_event = {
+	id = board_that_ship.1000
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_ship = {
+			limit = {
+				has_ship_flag = board_that_ship_target
+			}
+			set_disabled = no
+		}
+	}
+}

@@ -1,0 +1,21 @@
+namespace = board_that_ship_menu
+
+# menu
+country_event = {
+	id = board_that_ship_menu.1
+	title = modmenu.1.name
+	desc = board_that_ship_menu.1.desc
+	picture = GFX_evt_board_that_ship_picture3
+	is_triggered_only = yes
+
+	option = {
+		name = board_that_ship_menu.1.0
+		custom_tooltip = board_that_ship_menu.1.0.tooltip
+		country_event = {
+			id = board_that_ship.1000
+		}
+	}
+	option = {
+		name = modmenu_exit
+	}
+}

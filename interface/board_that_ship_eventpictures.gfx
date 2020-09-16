@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_board_that_ship_picture"
+		texturefile = "gfx/board_that_ship_pictures/board_that_ship_picture.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_board_that_ship_picture2"
+		texturefile = "gfx/board_that_ship_pictures/board_that_ship_picture2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_board_that_ship_picture3"
+		texturefile = "gfx/board_that_ship_pictures/board_that_ship_picture3.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_board_that_ship_picture4"
+		texturefile = "gfx/board_that_ship_pictures/board_that_ship_picture4.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

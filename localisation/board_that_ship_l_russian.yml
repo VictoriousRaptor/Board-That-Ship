@@ -1,0 +1,32 @@
+﻿l_russian:
+ # events
+ board_that_ship.3.name:0 "Корабль сильно поврежден"
+ board_that_ship.3.desc:0 "У §M[board_that_ship_target.GetName]§! отказало оружие, двигатели и защитные системы. Не ясно каким образом судно не превратилось в груду обломков. Судя по результатам сканирования, часть команды еще жива.\nЕсли поторопимся, мы можем попробовать захватить корабль, но следует хорошо подготовиться, без боя его не отдадут."
+ board_that_ship.3.0:0 "На абордаж!"
+ board_that_ship.3.1:0 "Нам не нужна эта рухлядь, добейте их."
+
+ board_that_ship.4.name:0 "Успех"
+ board_that_ship.4.desc:0 "Не смотря на хитроумные ловушки и отчаянное сопротивление экипажа, наши мужественные космодесантники смогли захватить §M[board_that_ship_target.GetName]§!. Прибывшие инженеры уже исправляют критические повреждения, чтобы не дать кораблю окончательно выйти из строя.\nТребуется скорейший капитальный ремонт."
+
+ board_that_ship.5.name:0 "Неудача"
+ board_that_ship.5.desc:0 "Мы не успели высадить десант на §M[board_that_ship_target.GetName]§!. Точно не известно что послужило причиной взрыва, возможно, кто-то активировал систему самоуничтожения.\nКак бы то ни было, мы упустили свой шанс."
+
+ board_that_ship.6.desc:0 "Враг не успел высадить десант на §M[board_that_ship_target.GetName]§!. Наш флот отступил и каким-то образом смог спасти поврежденный корабль."
+
+ board_that_ship.7.desc:0 "Мы не успели высадить десант на §M[board_that_ship_target.GetName]§!. Вражеский флот отступил и каким-то образом смог спасти поврежденный корабль.\nКак бы то ни было, мы упустили свой шанс."
+
+ # project
+ board_that_ship_project:0 "На абордаж!"
+ board_that_ship_project_DESC:0 "Корабль совершенно беззащитен, мы должны воспользоваться этим."
+ board_that_ship_project_discovery:0 "$board_that_ship_project$"
+ board_that_ship_project_discovery_DESC:0 "$board_that_ship_project_DESC$"
+
+ # modifier
+ board_that_ship_titan_cost:0 "Нельзя строить титан"
+ board_that_ship_titan_cost_desc:0 "$board_that_ship_titan_cost$"
+
+ # menu
+ modmenu_board_that_ship:0 "§HBoard That Ship§!"
+ board_that_ship_menu.1.desc:0 "$modmenu_configure$ $modmenu_board_that_ship$"
+ board_that_ship_menu.1.0:0 "Дебаг."
+ board_that_ship_menu.1.0.tooltip:0 "Нажмите. если что-то пошло не так."

@@ -1,0 +1,32 @@
+﻿l_spanish:
+ # events
+ board_that_ship.3.name:0 "Nave muy dañada"
+ board_that_ship.3.desc:0 "§M[board_that_ship_target.GetName]§! Subsistemas desconectados. Los sensores indican daño interno severo y ahora está a la deriva - No está claro cómo la nave todavía está en una sola pieza.\nLos bioscanner revelan que la tripulación sobreviviente de la nave hostil está participando en el control de daños y reparación.. ¡Si somos rápidos, podremos abordar y capturar la nave sin ningún problema"
+ board_that_ship.3.0:0 "Abordar nave!"
+ board_that_ship.3.1:0 "No necesitamos esta nave, acabar con ellos."
+
+ board_that_ship.4.name:0 "Asalto concluido"
+ board_that_ship.4.desc:0 "A pesar de las tácticas y fuerza de combate, la resistencia en la tripulación hostil ha cesado y ahora han dado su rendición incondicional a nuestros infantes de marina.\nLos ingenieros han llegado para arreglar los daños y mantener la nave en línea pero requerirá una revisión completa en el astillero."
+
+ board_that_ship.5.name:0 "Fracaso"
+ board_that_ship.5.desc:0 "No tuvimos tiempo de aterrizar en la nave §M[board_that_ship_target.GetName]§!. La causa de la explosión es desconocida, tal vez alguien activó el sistema de autodestrucción.\nSea lo que sea, perdimos nuestra oportunidad."
+
+ board_that_ship.6.desc:0 "El enemigo no tuvo tiempo de abordar en la nave §M[board_that_ship_target.GetName]§!. Nuestra flota se retiró y de alguna manera logró salvar el barco dañado."
+
+ board_that_ship.7.desc:0 "No tuvimos tiempo de aterrizar en la nave §M[board_that_ship_target.GetName]§!. La flota enemiga se retiró y de alguna manera logró salvar el barco dañado.\nLo que sea, perdimos nuestra oportunidad."
+
+ # project
+ board_that_ship_project:0 "Abordar nave!"
+ board_that_ship_project_DESC:0 "La nave está completamente indefensa, Avisar a los comandos de asalto."
+ board_that_ship_project_discovery:0 "$board_that_ship_project$"
+ board_that_ship_project_discovery_DESC:0 "$board_that_ship_project_DESC$"
+
+ # modifier
+ board_that_ship_titan_cost:0 "No se puede construir una nave clase Titan"
+ board_that_ship_titan_cost_desc:0 "$board_that_ship_titan_cost$"
+
+ # menu
+ modmenu_board_that_ship:0 "§HBoard That Ship§!"
+ board_that_ship_menu.1.desc:0 "$modmenu_configure$ $modmenu_board_that_ship$"
+ board_that_ship_menu.1.0:0 "Depurar."
+ board_that_ship_menu.1.0.tooltip:0 "Accede si algo va mal."
