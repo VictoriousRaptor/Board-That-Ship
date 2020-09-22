@@ -2,8 +2,8 @@ special_project = {
 	key = "board_that_ship_project"
 	cost = 0
 	days_to_research = 30
-	tech_department = engineering_technology
-	timelimit = 365
+	# tech_department = engineering_technology
+	timelimit = 360
 	picture = GFX_evt_board_that_ship_picture
 
 	event_scope = ship_event
@@ -11,7 +11,6 @@ special_project = {
 	requirements = {
 		shipclass_military = 1
 		leader = admiral
-		skill > 2
 	}
 
 	on_success = {
