@@ -136,9 +136,9 @@ country_event = {
 		hidden_effect = {
 			event_target:board_that_ship_target = {
 				set_disabled = no
-				set_disable_at_health = 0.01
+				set_disable_at_health = 1
 			}
-			#destroy_ship = event_target:board_that_ship_target
+			destroy_ship = event_target:board_that_ship_target
 		}
 	}
 }
