@@ -1,7 +1,7 @@
 ﻿l_german:
  # events
  board_that_ship.3.name:0 "Feindliches Schiff schwer beschädigt"
- board_that_ship.3.desc:0 "§M[board_that_ship_target.GetName]§! hat alle Subsysteme heruntergefahren. Unsere Scans zeigen schwere interne Schäden und es treibt führungslos durch den Raum - der Status der Hülle und Hauptsysteme ist unklar.\nBioscans zeigen, dass die überlebende Besatzung des feindlichen Schiffes zur Zeit mit der Schadensregulierung beschäftigt ist. Wenn wir schnell genug handeln, können wir mit unseren Landungstruppen an Bord gelangen und das Schiff übernehmen aber freiwillig werden sie es uns nicht überlassen!"
+ board_that_ship.3.desc:0 "§R[board_that_ship_target.GetName]§! hat alle Subsysteme heruntergefahren. Unsere Scans zeigen schwere interne Schäden und es treibt führungslos durch den Raum - der Status der Hülle und Hauptsysteme ist unklar.\nBioscans zeigen, dass die überlebende Besatzung des feindlichen Schiffes zur Zeit mit der Schadensregulierung beschäftigt ist. Wenn wir schnell genug handeln, können wir mit unseren Landungstruppen an Bord gelangen und das Schiff übernehmen aber freiwillig werden sie es uns nicht überlassen!"
  board_that_ship.3.0:0 "Übernehmt das Schiff!"
  board_that_ship.3.1:0 "Reine Zeitverschwendung, zerstört es endgültig!"
 
@@ -9,11 +9,11 @@
  board_that_ship.4.desc:0 "Trotz Fallen und heftiger Kämpfe konnte der Widerstand der feindlichen Besatzung gebrochen werden und die Überlebenden haben die bedingungslose Kapitulation akzeptiert.\nDie kritischen Schäden werden durch unsere Ingenieure behelfsmäßig repariert aber das Schiff benötigt eine vollständige Instandsetzung."
 
  board_that_ship.5.name:0 "Fehlschlag"
- board_that_ship.5.desc:0 "Unsere Truppen konnten nicht schnell genug auf das Schiff §M[board_that_ship_target.GetName]§! zugreifen. Die Ursache der Explosion ist nicht mehr feststellbar, wahrscheinlich hat jemand das Selbstzerstörungssystem aktiviert.\nWas auch passiert ist, wir haben unsere Chance vertan."
+ board_that_ship.5.desc:0 "Unsere Truppen konnten nicht schnell genug auf das Schiff §R[board_that_ship_target.GetName]§! zugreifen. Die Ursache der Explosion ist nicht mehr feststellbar, wahrscheinlich hat jemand das Selbstzerstörungssystem aktiviert.\nWas auch passiert ist, wir haben unsere Chance vertan."
 
- board_that_ship.6.desc:0 "Der Feind hatte keine Möglichkeit §M[board_that_ship_target.GetName]§! zu übernehmen. Unsere Flotte zog sich zurück und schaffte es irgendwie, das beschädigte Schiff zu retten."
+ board_that_ship.6.desc:0 "Der Feind hatte keine Möglichkeit §G[board_that_ship_target.GetName]§! zu übernehmen. Unsere Flotte zog sich zurück und schaffte es irgendwie, das beschädigte Schiff zu retten."
 
- board_that_ship.7.desc:0 "Wir hatten keine Möglichkeit §M[board_that_ship_target.GetName]§! zu übernehmen. Die feindliche Flotte zog sich zurück und schaffte es irgendwie, das beschädigte Schiff zu retten.\nWie auch immer, wir haben unsere Chance verpasst."
+ board_that_ship.7.desc:0 "Wir hatten keine Möglichkeit §R[board_that_ship_target.GetName]§! zu übernehmen. Die feindliche Flotte zog sich zurück und schaffte es irgendwie, das beschädigte Schiff zu retten.\nWie auch immer, wir haben unsere Chance verpasst."
 
  # project
  board_that_ship_project:0 "Übernehmt das Schiff!"

@@ -1,7 +1,7 @@
 ﻿l_spanish:
  # events
  board_that_ship.3.name:0 "Nave muy dañada"
- board_that_ship.3.desc:0 "§M[board_that_ship_target.GetName]§! Subsistemas desconectados. Los sensores indican daño interno severo y ahora está a la deriva - No está claro cómo la nave todavía está en una sola pieza.\nLos bioscanner revelan que la tripulación sobreviviente de la nave hostil está participando en el control de daños y reparación.. ¡Si somos rápidos, podremos abordar y capturar la nave sin ningún problema"
+ board_that_ship.3.desc:0 "§R[board_that_ship_target.GetName]§! Subsistemas desconectados. Los sensores indican daño interno severo y ahora está a la deriva - No está claro cómo la nave todavía está en una sola pieza.\nLos bioscanner revelan que la tripulación sobreviviente de la nave hostil está participando en el control de daños y reparación.. ¡Si somos rápidos, podremos abordar y capturar la nave sin ningún problema"
  board_that_ship.3.0:0 "Abordar nave!"
  board_that_ship.3.1:0 "No necesitamos esta nave, acabar con ellos."
 
@@ -9,11 +9,11 @@
  board_that_ship.4.desc:0 "A pesar de las tácticas y fuerza de combate, la resistencia en la tripulación hostil ha cesado y ahora han dado su rendición incondicional a nuestros infantes de marina.\nLos ingenieros han llegado para arreglar los daños y mantener la nave en línea pero requerirá una revisión completa en el astillero."
 
  board_that_ship.5.name:0 "Fracaso"
- board_that_ship.5.desc:0 "No tuvimos tiempo de aterrizar en la nave §M[board_that_ship_target.GetName]§!. La causa de la explosión es desconocida, tal vez alguien activó el sistema de autodestrucción.\nSea lo que sea, perdimos nuestra oportunidad."
+ board_that_ship.5.desc:0 "No tuvimos tiempo de aterrizar en la nave §R[board_that_ship_target.GetName]§!. La causa de la explosión es desconocida, tal vez alguien activó el sistema de autodestrucción.\nSea lo que sea, perdimos nuestra oportunidad."
 
- board_that_ship.6.desc:0 "El enemigo no tuvo tiempo de abordar en la nave §M[board_that_ship_target.GetName]§!. Nuestra flota se retiró y de alguna manera logró salvar el barco dañado."
+ board_that_ship.6.desc:0 "El enemigo no tuvo tiempo de abordar en la nave §G[board_that_ship_target.GetName]§!. Nuestra flota se retiró y de alguna manera logró salvar el barco dañado."
 
- board_that_ship.7.desc:0 "No tuvimos tiempo de aterrizar en la nave §M[board_that_ship_target.GetName]§!. La flota enemiga se retiró y de alguna manera logró salvar el barco dañado.\nLo que sea, perdimos nuestra oportunidad."
+ board_that_ship.7.desc:0 "No tuvimos tiempo de aterrizar en la nave §R[board_that_ship_target.GetName]§!. La flota enemiga se retiró y de alguna manera logró salvar el barco dañado.\nLo que sea, perdimos nuestra oportunidad."
 
  # project
  board_that_ship_project:0 "Abordar nave!"
