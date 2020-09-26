@@ -29,11 +29,12 @@ on_emergency_ftl = {
 # From = owner of fleet 2
 # FromFrom = fleet 1
 # FromFromFrom = fleet 2
-on_entering_battle = {
-	events = {
-		board_that_ship.8
-	}
-}
+# For colony ship, no need now
+# on_entering_battle = {
+# 	events = {
+# 		board_that_ship.8
+# 	}
+# }
 
 # Triggers when the game starts
 on_game_start = {

@@ -3,7 +3,7 @@ special_project = {
 	cost = 0
 	days_to_research = 30
 	# tech_department = engineering_technology
-	timelimit = 360
+	timelimit = 180
 	picture = GFX_evt_board_that_ship_picture
 
 	event_scope = ship_event

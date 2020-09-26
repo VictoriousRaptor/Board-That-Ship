@@ -1,5 +1,5 @@
 namespace = board_that_ship
-# set flag
+# set flag for a ship
 ship_event = {
 	id = board_that_ship.0
 	hide_window = yes
@@ -16,7 +16,8 @@ ship_event = {
 			is_ship_size = galleon
 			is_ship_size = marauder_galleon
 			is_ship_size = juggernaut
-			is_ship_class = shipclass_colonizer
+			is_ship_size = colonizer
+			# is_ship_class = shipclass_colonizer
 		}
 		exists = owner
 		owner = {
@@ -27,31 +28,33 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = {
-				is_ship_class = shipclass_colonizer
+				NOT = { is_ship_size = colonizer }
 			}
+			set_ship_flag = board_that_ship_target
+			set_disable_at_health = 0.01
+		}
+		else = {
 			random_list = {
-				9 = {
-				}
-				1 = {
+				90 = { }
+				10 = {
 					set_ship_flag = board_that_ship_target
 					set_disable_at_health = 0.01
 				}
 			}
 		}
-		else = {
-			set_ship_flag = board_that_ship_target
-			set_disable_at_health = 0.01
-		}
 	}
 }
 
-# set flag when game starts
+# set flag for every ship when game starts
 event = {
 	id = board_that_ship.1
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		every_ship = {
+			# limit = { 
+			# 	owner = { is_crisis_faction = no }
+			# } 
 			ship_event = {
 				id = board_that_ship.0
 			}
@@ -60,34 +63,6 @@ event = {
 	}
 }
 
-# set flag then mod loaded
-# event = {
-# 	id = board_that_ship.12
-# 	hide_window = yes
-# 	fire_only_once = yes
-# 	trigger = {
-# 		# NOT = {
-# 		# 	has_global_flag = board_that_ship_installed
-# 		# }
-# 		days_passed > 1
-# 	}
-# 	immediate = {
-# 		if = {
-# 			limit = {
-# 				NOT = {
-# 					has_global_flag = board_that_ship_installed
-# 				}
-# 			}
-# 			every_ship = {
-# 				ship_event = {
-# 					id = board_that_ship.0
-# 				}
-# 			}
-# 			set_global_flag = board_that_ship_installed
-# 		}
-# 	}
-# }
-
 # ship disabled
 ship_event = {
 	id = board_that_ship.2
@@ -95,8 +70,11 @@ ship_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_ship_flag = board_that_ship_target
-		exists = from.owner
 		is_disabled = yes
+		exists = from.owner
+		from.owner = {
+			is_country_type = default
+		}
 	}
 	immediate = {
 		# set_disabled = no
@@ -107,6 +85,7 @@ ship_event = {
 				id = board_that_ship.3
 			}
 		}
+
 		# log= "Boarding start on [board_that_ship_target.GetName] owner: [board_that_ship_target.Owner.GetName]"
 	}
 }
@@ -114,9 +93,9 @@ ship_event = {
 # event for disabler
 country_event = {
 	id = board_that_ship.3
-	title = board_that_ship.3.name
-	desc = board_that_ship.3.desc
-	picture = GFX_evt_board_that_ship_picture3
+	title = "board_that_ship.3.name"
+	desc = "board_that_ship.3.desc"
+	picture = "GFX_evt_board_that_ship_picture3"
 	show_sound = event_space_battle
 	location = event_target:board_that_ship_target
 	is_triggered_only = yes
@@ -126,7 +105,7 @@ country_event = {
 	option = {
 		name = board_that_ship.3.0
 		enable_special_project = {
-			name = board_that_ship_project
+			name = "board_that_ship_project"
 			location = event_target:board_that_ship_target
 			owner = root
 		}
@@ -136,7 +115,7 @@ country_event = {
 		hidden_effect = {
 			event_target:board_that_ship_target = {
 				set_disabled = no
-				set_disable_at_health = 1
+				set_disable_at_health = 0
 			}
 			destroy_ship = event_target:board_that_ship_target
 		}
@@ -146,9 +125,9 @@ country_event = {
 # Boarded and Captured
 country_event = {
 	id = board_that_ship.4
-	title = board_that_ship.4.name
-	desc = board_that_ship.4.desc
-	picture = GFX_evt_board_that_ship_picture2
+	title = "board_that_ship.4.name"
+	desc = "board_that_ship.4.desc"
+	picture = "GFX_evt_board_that_ship_picture2"
 	show_sound = event_ground_battle
 	location = event_target:board_that_ship_target
 	is_triggered_only = yes
@@ -212,9 +191,9 @@ country_event = {
 # too late
 country_event = {
 	id = board_that_ship.5
-	title = board_that_ship.5.name
-	desc = board_that_ship.5.desc
-	picture = GFX_evt_exploding_ship
+	title = "board_that_ship.5.name"
+	desc = "board_that_ship.5.desc"
+	picture = "GFX_evt_exploding_ship"
 	show_sound = event_ship_explosion
 	location = event_target:board_that_ship_target
 	is_triggered_only = yes
@@ -233,9 +212,9 @@ country_event = {
 # if ftl escaped
 fleet_event = {
 	id = board_that_ship.6
-	title = board_that_ship.4.name
-	desc = board_that_ship.6.desc
-	picture = GFX_evt_board_that_ship_picture4
+	title = "board_that_ship.4.name"
+	desc = "board_that_ship.6.desc"
+	picture = "GFX_evt_board_that_ship_picture4"
 	show_sound = event_ship_thrusters
 	location = root
 	is_triggered_only = yes
@@ -275,11 +254,12 @@ fleet_event = {
 }
 
 # if ftl escaped notification
+# for boarder
 country_event = {
 	id = board_that_ship.7
-	title = board_that_ship.5.name
-	desc = board_that_ship.7.desc
-	picture = GFX_evt_board_that_ship_picture4
+	title = "board_that_ship.5.name"
+	desc = "board_that_ship.7.desc"
+	picture = "GFX_evt_board_that_ship_picture4"
 	show_sound = event_ship_thrusters
 	location = from
 	is_triggered_only = yes
@@ -332,6 +312,8 @@ country_event = {
 				has_ship_flag = board_that_ship_target
 			}
 			set_disabled = no
+			remove_ship_flag = board_that_ship_target
+			set_disable_at_health = 0 
 		}
 	}
 }

@@ -26,7 +26,7 @@
  board_that_ship_titan_cost_desc:0 "$board_that_ship_titan_cost$"
 
  # menu
- modmenu_board_that_ship:0 "§HBoard That Ship§!"
+ modmenu_board_that_ship:0 "Board That Ship!"
  board_that_ship_menu.1.desc:0 "$modmenu_configure$ $modmenu_board_that_ship$"
  board_that_ship_menu.1.0:0 "Дебаг."
  board_that_ship_menu.1.0.tooltip:0 "Нажмите. если что-то пошло не так."
